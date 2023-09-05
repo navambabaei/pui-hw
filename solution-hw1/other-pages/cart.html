@@ -1,59 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <!-- Head: links and title -->
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>Cart</title>
   </head>
   
+  <!-- Body: main contents of the page -->
   <body>
+
+    <!-- Logo linking back to the home page -->
     <a href="../index.html">
       <img class="logo" src="../images/logo-01.svg" alt="Bun bun bake shop logo">
     </a>
 
+    <!-- Line to distinguish the header from the contents -->
     <hr>
     
+    <!-- Navigation elements linked: 1) Products (home page) 2) Cart (before checkout page) -->
     <nav>
       <div class="nav-element"><a href="../index.html" class="nav-link">PRODUCTS</a></div>
       <br>
       <div class="nav-element"><a href="other-pages/cart.html" id="this-page" class="nav-link">CART</a></div>
     </nav>
 
+    <!-- Contents of the cart -->
     <div id="cart">
+
+      <!-- Heading specifying current location as Shopping Cart -->
       <h1>Shopping Cart</h1>
 
+      <!-- First item in the cart -->
       <div class="cart-item">
+
+        <!-- Image, option to remove item from cart -->
         <div class="image-and-remove">
           <img class="cart-image" src="../images/original-cinnamon-roll.jpg" alt="Original cinnamon roll">
           <p class="remove">Remove</p>
         </div>
 
+        <!-- Descriptive contents specifying contents of product -->
         <div class="cart-item-description">
           <p class="descriptor">Original Cinnamon Roll<br>Glazing: Keep original<br>Pack Size: 1</p>
         </div>
 
+        <!-- Final price of selection -->
         <h1>$ 2.49</h1>
+
       </div>
 
+      <!-- Second item in cart -->
       <div class="cart-item">
+
+        <!-- Image, option to remove item from cart -->
         <div class="image-and-remove">
           <img class="cart-image" src="../images/double-chocolate-cinnamon-roll.jpg" alt="Double chocolate cinnamon roll">
           <p class="remove">Remove</p>
         </div>
 
+        <!-- Descriptive contents specifying contents of product -->
         <div class="cart-item-description">
           <p class="descriptor">Double Chocolate Cinnamon Roll<br>Glazing: Sugar milk<br>Pack Size: 6</p>
         </div>
         
+        <!-- Final price of selection -->
         <h1>$ 27.45</h1>
+
       </div>
 
+      <!-- Line distinguishing cart contents from final total and actions -->
       <hr id="above-checkout-line">
 
       <h1>Total: $29.94</h1>
       <div id="checkout-button">
         <button>Checkout</button>
       </div>
+      
     </div>
 
   </body>
