@@ -7,7 +7,7 @@ body, button, select {
     font-size: 36px;
 }
 
-h1 {
+h1, .cart-price {
     font-weight: normal;
     font-size: 42px;
     margin-bottom: 60px;
@@ -59,7 +59,7 @@ button {
 
 /* Common Spacing */
 
-h1, nav, #cart, #checkout-button, .cart-item, .image-and-remove, .descriptor {
+h1, nav, #cart, .cart-price, #checkout-button, .cart-item, .image-and-remove, .descriptor {
     max-width: max-content;
     margin-left: auto;
     margin-right: auto;
