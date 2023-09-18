@@ -7,7 +7,7 @@ body, button, select {
     font-size: 24px;
 }
 
-h1, .totals {
+h1, .cart-price, #total-label, #total-price {
     font-weight: normal;
     font-size: 32px;
     margin-bottom: 60px;
@@ -210,6 +210,7 @@ select {
 }
 
 #totals {
+    margin-top: 20px;
     justify-content: space-between;
 }
 
