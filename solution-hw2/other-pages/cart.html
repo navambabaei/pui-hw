@@ -27,7 +27,7 @@
           <div class="nav-element"><a href="cart.html" id="this-page" class="nav-link">CART</a></div>
         </nav>
 
-          <!-- Line to distinguish the header from the contents -->
+          <!-- Line to distinguish the nav from the heading -->
           <hr>
 
           <!-- Heading specifying current location as Shopping cart -->
@@ -45,6 +45,7 @@
         <!-- First item in the cart -->
         <div class="cart-item">
 
+          <!-- Items that make up the main row of the item -->
           <div class="cart-row">
             <img class="cart-image" src="../images/original-cinnamon-roll.jpg" alt="Original cinnamon roll" width="200"/>
 
@@ -59,6 +60,7 @@
             <h1 class="cart-price">$ 2.49</h1>
           </div>
 
+          <!-- Not aligned with row, but in cart item container-->
           <p class="remove">Remove</p>
 
         </div>
@@ -66,6 +68,7 @@
         <!-- Second item in cart -->
         <div class="cart-item">
 
+          <!-- Items that make up the main row of the item -->
           <div class="cart-row">
             <img class="cart-image" src="../images/double-chocolate-cinnamon-roll.jpg" alt="Double chocolate cinnamon roll" width="200"/>
 
@@ -80,19 +83,25 @@
             <h1 class="cart-price">$ 27.45</h1>
           </div>
 
+          <!-- Not aligned with row, but in cart item container-->
           <p class="remove">Remove</p>
+
         </div>
 
+        <!-- Sub-area of the cart, content related to checking out-->
         <div id="checkout-area">
 
-          <hr id="above-checkout-line">
+          <!-- Visual divider between items and totals-->
+          <hr id="checkout-divider">
 
+          <!-- All items relevant to total label and price -->
           <div id="totals">
             <div id="ghost-image"></div>
             <h1 id="total-label">Total</h1>
             <h1 id="total-price">$ 29.94</h1>
           </div>
 
+          <!-- Main call to action location for checking out -->
           <div id="checkout-cta">
             <button id="checkout-button">Checkout</button>
           </div>
