@@ -7,10 +7,15 @@ body, button, select {
     font-size: 24px;
 }
 
-h1, .cart-price, #total-label, #total-price {
+h1 {
     font-weight: normal;
     font-size: 32px;
     margin-bottom: 60px;
+}
+
+.cart-price, #total-label, #total-price {
+    font-size: 32px;
+    margin-bottom: 0px;
 }
 
 h1 {
@@ -201,6 +206,10 @@ select {
     width: 400px;
 }
 
+.cart-item, #totals, #checkout-cta {
+    padding-right: 10px;
+}
+
 .cart-item, #checkout-area, #checkout-divider {
     width: 800px;
 }
@@ -219,6 +228,7 @@ select {
 }
 
 #checkout-cta {
+    margin-top: 40px;
     justify-content: flex-end;
 }
 
