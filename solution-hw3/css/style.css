@@ -90,7 +90,7 @@ button {
 }
 
 nav, header, .gallery-row, #detail-listing, #cart, .cart-row, .cart-item, .cart-price, 
-#total-price, #totals, #total-label, #checkout-area, #checkout-cta {
+#total-price, #totals, #total-label, #checkout-area, #checkout-cta, #purchase {
     display: flex;
 }
 
@@ -156,8 +156,13 @@ select {
 }
 
 #item-price, #add-to-cart {
-    display: inline;
     margin-left: 20px;
+    margin-bottom: 0px;
+    align-self: center;
+}
+
+#purchase {
+    justify-content: flex-end;
 }
 
 #purchase, #selectors {
