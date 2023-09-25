@@ -51,12 +51,15 @@ let packSize = [
 
 // Onload function to populate dropdowns when the window is loaded
 window.onload = function() {
+
     populateGlazing();
     populatePackSize();
+    
 }
 
 // Function to dynamically populate glazing dropdown
 function populateGlazing() {
+
     // Retrieve glazing dropdown 
     let glazingDropdown = document.getElementById("glazing");
     
@@ -67,10 +70,12 @@ function populateGlazing() {
         option.text = glazingTypes[i].glazing;
         glazingDropdown.appendChild(option);
     }
+
 }
 
 // Function to dynamically populate pack size dropdown
 function populatePackSize() {
+
     // Retrieve pack size dropdown
     let packDropdown = document.getElementById("pack-size");
 
@@ -81,11 +86,13 @@ function populatePackSize() {
         option.text = packSize[i].size;
         packDropdown.appendChild(option);
     }
+
 }
 
 // Function to calculate and update total cost based on dropdown selections
 // Function ran on change/when a new option is selected in dropdown
 function calculateTotal() {
+
     // Retrieve glazing and pack size dropdowns
     let glazingDropdown = document.getElementById("glazing");
     let packSizeDropdown = document.getElementById("pack-size");
@@ -118,4 +125,5 @@ function calculateTotal() {
     let total = (cinnamonRoll.basePrice + cinnamonRoll.glazingPrice) * cinnamonRoll.packPrice;
     let displayedPrice = document.getElementById("item-price");
     displayedPrice.innerHTML = "$ " + total.toFixed(2);
+
 }
