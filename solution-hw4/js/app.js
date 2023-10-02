@@ -97,6 +97,7 @@ function updatePage() {
     // Update image path
     const productImage = document.getElementById("detail-image");
     productImage.src = "../images/" + rolls[rollType].imageFile;
+    productImage.alt = rollInfo.type + " cinnamon roll";
 
 }
 
