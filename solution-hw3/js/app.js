@@ -54,7 +54,7 @@ window.onload = function() {
 
     populateGlazing();
     populatePackSize();
-    
+
 }
 
 // Function to dynamically populate glazing dropdown
@@ -102,7 +102,6 @@ function calculateTotal() {
     let selectedPackSize = packSizeDropdown.value;
 
     // Create new object instance for current product
-    // Currently hard coded to plain cinnamon rolls
     let cinnamonRoll = new CinnamonRoll(2.49, 0, 1);
 
     // For loop iterating through each glazing type, matching selected type to respective price
