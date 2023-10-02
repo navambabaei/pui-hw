@@ -92,7 +92,7 @@ function updatePage() {
 
     // Update base price
     const productPrice = document.getElementById("item-price");
-    productPrice.innerText = "$ " + rolls[rollType].basePrice;
+    productPrice.innerText = "$ " + rollInfo.basePrice;
 
     // Update image path
     const productImage = document.getElementById("detail-image");
@@ -147,7 +147,6 @@ function calculateTotal() {
     // Create new object instance for current product
     let rollPrices = new Prices(rollInfo.basePrice, 0, 1);
 
-
     // For loop iterating through each glazing type, matching selected type to respective price
     for (let i = 0; i < glazingTypes.length; i++) {
         if (glazingTypes[i].glazing === selectedGlazing) {
@@ -177,8 +176,13 @@ document.getElementById("add-to-cart").addEventListener('click', addToCart);
 // Function to add items to cart (here, an array) 
 function addToCart() {
 
+    // Retrieve final selection from dropdowns
     let glazingDropdown = document.getElementById("glazing");
     let packSizeDropdown = document.getElementById("pack-size");
+
+    // Store final selection information in information storage object
+    // Set here instead of calculateTotal() to account for edge case where
+    // user does not select any options other than defaults
     rollInfo.glazing = glazingDropdown.value;
     rollInfo.size = packSizeDropdown.value;
 
