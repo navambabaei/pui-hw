@@ -5,18 +5,6 @@ const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
 
-
-// Object class to store product prices
-class Prices {
-
-    constructor(basePrice, glazingPrice, packSize) {
-        this.basePrice = basePrice;
-        this.glazingPrice = glazingPrice; // 0 default
-        this.packSize = packSize; // 1 default
-    }
-
-}
-
 // Object class to store product information
 class Roll {
 
@@ -140,32 +128,32 @@ function calculateTotal() {
     // Retrieve glazing and pack size dropdowns
     let glazingDropdown = document.getElementById("glazing");
     let packSizeDropdown = document.getElementById("pack-size");
+
+    rollInfo.glazing = glazingDropdown.value;
+    rollInfo.size = packSizeDropdown.value;
     
     // Store selected values from each dropdown
-    let selectedGlazing = glazingDropdown.value;
-    let selectedPackSize = packSizeDropdown.value;
-
-    // Create new object instance for current product
-    let rollPrices = new Prices(rollInfo.basePrice, 0, 1);
+    let selectedGlazing = 0;
+    let selectedPackSize = 1;
 
     // For loop iterating through each glazing type, matching selected type to respective price
     for (let i = 0; i < glazingTypes.length; i++) {
-        if (glazingTypes[i].glazing === selectedGlazing) {
-            rollPrices.glazingPrice = glazingTypes[i].price;
+        if (glazingTypes[i].glazing === glazingDropdown.value) {
+            selectedGlazing = glazingTypes[i].price;
             break;
         }
     }
 
     // For loop iterating through each pack size option, matching selected size to respective price multiplier
     for (let i = 0; i < packSize.length; i++) {
-        if (packSize[i].size.toString() === selectedPackSize) {
-            rollPrices.packPrice = packSize[i].multiplier;
+        if (packSize[i].size.toString() === packSizeDropdown.value) {
+            selectedPackSize = packSize[i].multiplier;
             break;
         }
     }
 
     // Calculate the total price and update the displayed item price
-    let total = (rollPrices.basePrice + rollPrices.glazingPrice) * rollPrices.packPrice;
+    let total = (rollInfo.basePrice + selectedGlazing) * selectedPackSize;
     let displayedPrice = document.getElementById("item-price");
     displayedPrice.innerHTML = "$ " + total.toFixed(2);
 
@@ -187,7 +175,9 @@ function addToCart() {
     rollInfo.glazing = glazingDropdown.value;
     rollInfo.size = packSizeDropdown.value;
 
-    cart.push(rollInfo);
+    let duplicateRoll = new Roll(rollInfo.type, rollInfo.glazing, rollInfo.size, rollInfo.basePrice);
+
+    cart.push(duplicateRoll);
     console.log(cart);
 
 }
