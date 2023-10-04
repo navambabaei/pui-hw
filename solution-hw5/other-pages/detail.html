@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head: links and title -->
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script defer src="../js/rollsData.js"></script>
+    <script defer src="../js/app.js"></script>
+    <title>Product Details</title>
+  </head>
+  
+  <!-- Body: main contents of the page -->
+  <body>
+
+    <!-- Header: top contents of the page-->
+    <header>
+
+      <!-- Logo linking back to the home page -->
+      <a href="../index.html">
+        <img class="logo" src="../images/logo-01.svg" alt="Bun bun bake shop logo"/>
+      </a>
+
+      <div id="header-contents">
+
+        <!-- Navigation elements linked: 1) Products (home page) 2) Cart (before checkout page) -->
+        <nav>
+          <div class="nav-element"><a href="../index.html" id="this-page" class="nav-link">PRODUCTS</a></div>
+          <div class="nav-element"><a href="cart.html" class="nav-link">CART</a></div>
+        </nav>
+
+        <!-- Line to distinguish the nav from the heading -->
+        <hr>
+
+        <!-- Heading to show user what product they are looking at -->
+        <h1 id="page-header">Original cinnamon roll</h1>
+
+      </div>
+
+    </header>
+
+    <main>
+
+      <!-- Content of a singular listing in a smaller scope -->
+      <div id="detail-listing">
+
+        <!-- Image of the product -->
+        <img id="detail-image" src="../images/original-cinnamon-roll.jpg" alt="Original cinnamon roll" width="600"/>
+
+        <!-- Descriptive contents of the product -->
+        <div id="detail-sub-image">
+
+          <!-- Main product description -->
+          <p>Customize our delicious, hand-made cinnamon roll to your liking!</p>
+
+          <!-- Customizable selectors for the product -->
+          <div id="selectors">
+
+            <!-- First selector: Glazing type -->
+            <div class="dropdown-container">
+              <label for="glazing">Glazing:</label>
+              <br>
+              <!--<select name="glazing" id="glazing" class="dropdown">
+                <option value="keep-original">Keep original</option>
+                <option value="sugar-milk">Sugar milk</option>
+                <option value="vanilla-milk">Vanilla milk</option>
+                <option value="double-chocolate">Double chocolate</option>
+              </select>-->
+              <select name="glazing" id="glazing" class="dropdown" onchange="calculateTotal(this)">
+                <!-- options populated dynamically -->
+              </select>
+
+            </div>
+    
+            <!-- Second selector: Pack size -->
+            <div class="dropdown-container">
+              <label for="pack-size">Pack size:</label>
+              <br>
+              <!--<select name="pack-size" id="pack-size" class="dropdown">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+              </select>-->
+              <select name="pack-size" id="pack-size" class="dropdown" onchange="calculateTotal(this)">
+                <!-- options populated dynamically -->
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Actionable area for user to add product to cart -->
+          <div id="purchase">
+            <p id="item-price">$ 2.49</p>
+            <button id="add-to-cart">Add to Cart</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+    
+  </body>
+
+</html>
