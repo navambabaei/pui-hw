@@ -5,6 +5,8 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script defer src="../js/rollsData.js"></script>
+    <script defer src="../js/cart.js"></script>
     <title>Cart</title>
   </head>
   
@@ -41,49 +43,34 @@
       <!-- Contents of the cart -->
       <div id="cart">
 
-        <!-- First item in the cart -->
-        <div class="cart-item">
+        <div id = "cart-list">
+          
+          <!-- First item in the cart -->
+          <template class="cart-item">
 
-          <!-- Items that make up the main row of the item -->
-          <div class="cart-row">
-            <img class="cart-image" src="../images/original-cinnamon-roll.jpg" alt="Original cinnamon roll" width="200"/>
+            <div class="roll">
 
-            <!-- Descriptive contents specifying contents of product -->
-            <div class="cart-item-description">
-              <p class="descriptor">Original Cinnamon Roll</p>
-              <p class="descriptor">Glazing: Keep original</p>
-              <p class="descriptor">Pack Size: 1</p>
-            </div>
+              <!-- Items that make up the main row of the item -->
+              <div class="cart-row">
+                <img class="cart-image" src="../images/original-cinnamon-roll.jpg" alt="Original cinnamon roll" width="200"/>
 
-            <!-- Final price of selection -->
-            <p class="cart-price">$ 2.49</p>
-          </div>
+                <!-- Descriptive contents specifying contents of product -->
+                <div class="cart-item-description">
+                  <p id="cart-item-title" class="descriptor">Original Cinnamon Roll</p>
+                  <p id="cart-item-glazing" class="descriptor">Glazing: Keep original</p>
+                  <p id="cart-item-packsize" class="descriptor">Pack Size: 1</p>
+                </div>
 
-          <!-- Not aligned with row, but in cart item container-->
-          <p class="remove">Remove</p>
+                <!-- Final price of selection -->
+                <p class="cart-price">$ 2.49</p>
+              </div>
 
-        </div>
-
-        <!-- Second item in cart -->
-        <div class="cart-item">
-
-          <!-- Items that make up the main row of the item -->
-          <div class="cart-row">
-            <img class="cart-image" src="../images/double-chocolate-cinnamon-roll.jpg" alt="Double chocolate cinnamon roll" width="200"/>
-
-            <!-- Descriptive contents specifying contents of product -->
-            <div class="cart-item-description">
-              <p class="descriptor">Double Chocolate Cinnamon Roll</p>
-              <p class="descriptor">Glazing: Sugar milk</p>
-              <p class="descriptor">Pack Size: 6</p>
-            </div>
+              <!-- Not aligned with row, but in cart item container-->
+              <p id="remove">Remove</p>
             
-            <!-- Final price of selection -->
-            <p class="cart-price">$ 27.45</p>
-          </div>
+            </div>
 
-          <!-- Not aligned with row, but in cart item container-->
-          <p class="remove">Remove</p>
+          </template>
 
         </div>
 

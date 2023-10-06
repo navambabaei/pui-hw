@@ -22,46 +22,6 @@ let rollInfo = new Roll;
 rollInfo.type = rollType;
 rollInfo.basePrice = rolls[rollType].basePrice;
 
-// Dictionary style array to store associated prices to glazing types
-let glazingTypes = [
-    {
-        glazing: "Keep original",
-        price: 0,
-    },
-    {
-        glazing: "Sugar milk",
-        price: 0,
-    },
-    {
-        glazing: "Vanilla milk",
-        price: 0.5,
-    },
-    {
-        glazing: "Double chocolate",
-        price: 1.50,
-    },
-];
-
-// Dictionary style array to store associated price multipliers to pack sizes
-let packSize = [
-    {
-        size: 1,
-        multiplier: 1,
-    },
-    {
-        size: 3,
-        multiplier: 3,
-    },
-    {
-        size: 6,
-        multiplier: 5,
-    },
-    {
-        size: 12,
-        multiplier: 10,
-    }
-];
-
 // Onload function to populate dropdowns when the window is loaded
 window.onload = function() {
 
