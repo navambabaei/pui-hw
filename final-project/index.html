@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;500;600&display=swap" rel="stylesheet">
+    <script defer src="app.js"></script>
+    <title>Nava's Java</title>
+  </head>
+  
+  <body>
+
+    <header>
+
+        <a href="index.html" id="logo">
+            <div id="logo-title">
+                <img src="images/logo.png" id="logo-img" alt="White mug pouring coffee to the left">
+                <h1>Nava's Java</h1>
+            </div>
+        </a>
+
+        <nav>
+            <a href="#coffee-section">
+                Coffee
+            </a>
+            <a href="#ratio-section">
+                Ratio Calculator
+            </a>
+        </nav>
+
+    </header>
+    
+    <main> 
+
+        <section id="intro-section">
+            <img src="images/ellipse.jpg" id="ellipse-img" alt="Blue oval with blurred edges, under a random assortment of small yellow stars"/>
+            <div id="intro-section-text">
+                <h2>Coffee menus shouldn't feel like a wine list.</h2>
+                <ul>
+                    <li>Find the drink you want</li>
+                    <li>Flip the card</li>
+                    <li>Learn how it's made</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="coffee-section">
+            <h1>Coffee</h1>
+
+            <div id="coffee-cards">
+                <div class="card" onclick="openModal('espresso')">
+                    <img src="images/espresso.png" class="card-img" alt="Cartoon cup with a shot of espresso"/>
+                    <p class="card-title">Espresso</p>
+                </div>
+
+
+                <div class="card" onclick="openModal('cappuccino')">
+                    <img src="images/cappuccino.png" class="card-img" alt="Cartoon cup with equal amounts of foam, steamed milk, and espresso"/>
+                    <p class="card-title">Cappuccino</p>
+                </div>
+
+                <div class="card" onclick="openModal('latte')">
+                    <img src="images/latte.png" class="card-img" alt="Cartoon cup with a shot of espresso filled to the brim with steamed milk"/>
+                    <p class="card-title">Latte</p>
+                </div>
+
+                    
+                <div class="card" onclick="openModal('americano')">
+                    <img src="images/americano.png" class="card-img" alt="Cartoon cup with a shot of espresso filled to the brim with water"/>
+                    <p class="card-title">Americano</p>
+                </div>
+
+                <div class="card" onclick="openModal('macchiato')">
+                    <img src="images/macchiato.png" class="card-img" alt="Cartoon cup with a shot of espresso and a bit of foam"/>
+                    <p class="card-title">Macchiato</p>
+                </div>
+
+                <div class="card" onclick="openModal('mocha')">
+                    <img src="images/mocha.png" class="card-img" alt="Cartoon cup with a shot of espresso, chocolate, and some steamed milk"/>
+                    <p class="card-title">Mocha</p>
+                </div>
+
+                <div class="card" onclick="openModal('flat-white')">
+                    <img src="images/flat-white.png" class="card-img" alt="Cartoon cup with a shot of espresso and some steamed milk"/>
+                    <p class="card-title">Flat White</p>
+                </div>
+
+                <div class="card" onclick="openModal('black-coffee')">
+                    <img src="images/black-coffee.png" class="card-img" alt="Cartoon cup filled with black coffee"/>
+                    <p class="card-title">Black Coffee</p>
+                </div>
+            </div>
+
+            <div id="modal-background">
+                <div id="modal">
+
+                    <button id="close">Close</button>
+
+                    <div id="modal-contents">
+                        <img src="images/espresso-deets.png" id="modal-img" alt="Cartoon cup with 1 ounce of espresso"/>
+                        
+                        <div id="modal-text">
+                            <p id="coffee-type">Espresso</p>
+                            <p id="coffee-description">A small but mighty drink made by pushing hot steam through ground coffee beans.</p>
+                            <p id="enjoyed-with">Enjoy with: a flaky pastry like a cornetto or croissant.</p>
+                            <p id="fun-fact">Fun fact: Espresso is usually measured in terms of shots, each shot being 1 ounce. Cheers!</p>
+                        </div> 
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="ratio-section">
+            <h1>Ratio Calculator</h1>
+
+            <div id="ratio-background">
+
+                <div id="ratio-contents">
+
+                    <div id="selection-area">
+                        <label for="coffee-dropdown">I want to make a...</label>
+                        <select name="coffee-dropdown" id="coffee-dropdown">
+                            <option value="none" selected disabled hidden>Select your coffee</option> 
+                        </select>
+                    </div>
+    
+                    <img src="images/big-cappuccino.png" alt="Cartoon cup filled with cappuccino, with ingredients in tiers"/>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+  </body>
+
+</html>

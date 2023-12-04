@@ -1,0 +1,184 @@
+h1, h2, select, #coffee-type {
+    font-size: 48px;
+}
+
+h1, h2 {
+    margin: 20px;
+}
+
+p {
+    font-size: 24px;
+}
+
+#logo {
+    font-size: 60px;
+}
+
+li, label {
+    font-size: 32px;
+}
+
+nav {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+#logo-title {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo-img {
+    max-height: 120px;
+}
+
+a {
+    text-decoration: none;
+    color: #351E0B;
+}
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    color: #351E0B;
+    background-color: #FFFFFA;
+    /* margin-left: 100px;
+    margin-right: 100px; */
+}
+
+#intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro-section-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#coffee-cards {
+    background-image: url("../images/cards-background.png");
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E0EDFF;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #1D7BFF;
+    border-radius: 30px;
+    width: 290px;
+    height: 290px;
+    margin-bottom: 40px;
+}
+
+.card:hover {
+    background-color: #B0D1FF;
+}
+
+.card-img {
+    width: 172.75px;
+    height: 136px;
+}
+
+.card-title {
+    margin-bottom: 0px;
+}
+
+#modal {
+    border: 4px solid #1D7BFF;
+    border-radius: 40px;
+    background-color: #FFFFFA;
+    max-width: 70%;
+    padding: 50px;
+    margin: auto;
+}
+
+#modal-background {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 300px; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#modal-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+#modal-img {
+    width: 500px;
+}
+
+#coffee-type, #coffee-description, #enjoyed-with, #fun-fact {
+    max-width: max-content;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#coffee-description, #enjoyed-with, #fun-fact {
+    margin-top: 0;
+}
+
+#coffee-description {
+    font-style: italic;
+}
+
+#ratio-background {
+    background-image: url("../images/ratio-background.png");
+    background-position: center center;
+}
+
+#ratio-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 230px;
+    padding-bottom: 230px;
+}
+
+#selection-area {
+    border: 4px solid #1D7BFF;
+    border-radius: 30px;
+    background-color: #FFFFFA;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 20px;
+}
+
+select {
+    border-radius: 40px;
+    padding: 20px;
+    color: #351E0B;
+}
