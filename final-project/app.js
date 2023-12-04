@@ -67,7 +67,7 @@ const drinks = {
 
 const ratios = {
     "Espresso": {
-        
+
     },
     "Cappuccino": {
     },
@@ -93,6 +93,7 @@ function openModal(title) {
 }
 
 let closebutton = document.getElementById("close");
+let modalcard = document.getElementById("modal");
 
 closebutton.onclick = function() {
     modal.style.display = "none";
