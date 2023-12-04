@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script defer src="app.js"></script>
     <title>Nava's Java</title>
   </head>
@@ -28,7 +29,7 @@
                 Coffee
             </a>
             <a href="#ratio-section">
-                Ratio Calculator
+                Serving Scaler
             </a>
         </nav>
 
@@ -37,7 +38,7 @@
     <main> 
 
         <section id="intro-section">
-            <img src="images/ellipse.jpg" class="animate__animated animate__pulse animate__slow animate__infinite" id="ellipse-img" alt="Blue oval with blurred edges, under a random assortment of small yellow stars"/>
+            <img src="images/ellipse.jpg" class="animate__animated animate__flash animate__slower animate__infinite" id="ellipse-img" alt="Blue oval with blurred edges, under a random assortment of small yellow stars"/>
             <div id="intro-section-text">
                 <h2>Coffee menus shouldn't feel like a wine list.</h2>
                 <ul>
@@ -57,7 +58,6 @@
                     <p class="card-title">Espresso</p>
                 </div>
 
-
                 <div class="card" onclick="openModal('cappuccino')">
                     <img src="images/cappuccino.png" class="card-img" alt="Cartoon cup with equal amounts of foam, steamed milk, and espresso"/>
                     <p class="card-title">Cappuccino</p>
@@ -67,7 +67,6 @@
                     <img src="images/latte.png" class="card-img" alt="Cartoon cup with a shot of espresso filled to the brim with steamed milk"/>
                     <p class="card-title">Latte</p>
                 </div>
-
                     
                 <div class="card" onclick="openModal('americano')">
                     <img src="images/americano.png" class="card-img" alt="Cartoon cup with a shot of espresso filled to the brim with water"/>
@@ -93,45 +92,102 @@
                     <img src="images/black-coffee.png" class="card-img" alt="Cartoon cup filled with black coffee"/>
                     <p class="card-title">Black Coffee</p>
                 </div>
-            </div>
 
-            <div id="modal-background">
-                <div id="modal" class="animate__animated animate__slideInLeft">
+                <div id="modal-background">
 
-                    <button id="close">Close</button>
+                    <div id="modal" class="animate__animated animate__slideInLeft">
 
-                    <div id="modal-contents">
-                        <img src="images/espresso-deets.png" id="modal-img" alt="Cartoon cup with 1 ounce of espresso"/>
-                        
-                        <div id="modal-text">
-                            <p id="coffee-type">Espresso</p>
-                            <p id="coffee-description">A small but mighty drink made by pushing hot steam through ground coffee beans.</p>
-                            <p id="enjoyed-with">Enjoy with: a flaky pastry like a cornetto or croissant.</p>
-                            <p id="fun-fact">Fun fact: Espresso is usually measured in terms of shots, each shot being 1 ounce. Cheers!</p>
-                        </div> 
+                        <img src="images/x.svg" id="close" alt="X: Close modal"/>
+
+                        <div id="modal-contents">
+                            <img src="images/espresso-deets.png" id="modal-img" alt="Cartoon cup with 1 ounce of espresso"/>
+                            
+                            <div id="modal-text">
+                                <p id="coffee-type">Espresso</p>
+                                <p id="coffee-description">A small but mighty drink made by pushing hot steam through ground coffee beans.</p>
+                                <p id="enjoyed-with">Enjoy with: a flaky pastry like a cornetto or croissant.</p>
+                                <p id="fun-fact">Fun fact: Espresso is usually measured in terms of shots, each shot being 1 ounce. Cheers!</p>
+                            </div> 
+
+                        </div>
 
                     </div>
 
                 </div>
+
             </div>
 
         </section>
 
         <section id="ratio-section">
-            <h1>Ratio Calculator</h1>
+            <h1>Serving Scaler</h1>
 
             <div id="ratio-background">
 
                 <div id="ratio-contents">
 
                     <div id="selection-area">
+                        <p id="instructions">Pick a drink to scale your serving size:</p>
                         <label for="coffee-dropdown">I want to make a...</label>
-                        <select name="coffee-dropdown" id="coffee-dropdown">
-                            <option value="none" selected disabled hidden>Select your coffee</option> 
-                        </select>
+
+                        <div id="dropdown">
+
+                            <select name="coffee-dropdown" id="coffee-dropdown" onchange="scale()">
+                                <option id="select-prefill" value="none" selected disabled hidden>Select your coffee</option> 
+                                <option>Cappuccino</option>
+                                <option>Latte</option>
+                                <option>Americano</option>
+                                <option>Macchiato</option>
+                                <option>Mocha</option>
+                                <option>Flat White</option>
+                            </select>
+
+                            <!-- <button id="make">Make</button> -->
+
+                        </div>
+                
                     </div>
-    
-                    <img src="images/big-cappuccino.png" alt="Cartoon cup filled with cappuccino, with ingredients in tiers"/>
+
+                    <div id="results">
+                    
+                        <div id="cup">
+                            <div class="steam" id="steam-one"></div>
+                            <div class="steam" id="steam-two"></div>
+                            <div class="steam" id="steam-three"></div>
+                            <div class="steam" id="steam-four"></div>
+                            <img src="images/big-cappuccino.png" id="servings-image" alt="Cartoon cup filled with cappuccino, with ingredients in tiers"/>    
+                        </div>
+                    
+                        <div id="right-side">
+
+                            <div id="select-servings">
+                                <button class="servings" id="1" onclick="scale1()">1x</button>
+                                <button class="servings" id="2" onclick="scale2()">2x</button>
+                                <button class="servings" id="3" onclick="scale3()">3x</button>
+                            </div>
+
+                            <div id="recipe" class="animate__animated animate__fadeIn">
+                                <div class="recipe-line">
+                                    <span class="measurement" id="meas1">-- oz</span>
+                                    <p class="ingredient" id="ing1">----------</p>
+                                </div>
+
+                                <div class="recipe-line">
+                                    <span class="measurement" id="meas2">-- oz</span>
+                                    <p class="ingredient" id="ing2">----------</p>
+                                </div>
+
+                                <div class="recipe-line">
+                                    <span class="measurement" id="meas3">-- oz</span>
+                                    <p class="ingredient" id="ing3">----------</p>
+                                </div>
+
+                                <p id="caffiene">Caffiene: -- mg</p>
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 

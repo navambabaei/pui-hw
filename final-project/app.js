@@ -65,26 +65,6 @@ const drinks = {
     }
 };
 
-const ratios = {
-    "Espresso": {
-
-    },
-    "Cappuccino": {
-    },
-    "Latte": {
-    },
-    "Americano": {
-    },
-    "Macchiato": {
-    },
-    "Mocha": {
-    },
-    "Flat-white": {
-    },
-    "Black-coffee": {
-    }
-}
-
 let modal = document.getElementById("modal-background");
 
 function openModal(title) {
@@ -93,10 +73,15 @@ function openModal(title) {
 }
 
 let closebutton = document.getElementById("close");
-let modalcard = document.getElementById("modal");
 
 closebutton.onclick = function() {
     modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 let image = document.getElementById("modal-img");
@@ -111,4 +96,120 @@ function populateModal(title) {
     description.innerHTML = drinks[title].description;
     pairing.innerHTML = "Enjoy with: " + drinks[title].pairing;
     fact.innerHTML = "Fun fact: " + drinks[title].fact;
+}
+
+
+const ratios = {
+    "Cappuccino": {
+        "ing1": [2, "Espresso"],
+        "ing2": [2, "Steamed Milk"],
+        "ing3": [2, "Foamed Milk"],
+        "img": "cappuccino.png"
+    },
+    "Latte": {
+        "ing1": [2, "Espresso"],
+        "ing2": [4, "Steamed Milk"],
+        "ing3": [0.5, "Foamed Milk"],
+        "img": "latte.png"
+    },
+    "Americano": {
+        "ing1": [2, "Espresso"],
+        "ing2": [3, "Hot Water"],
+        "ing3": ["--", "----------"],
+        "img": "americano.png"
+    },
+    "Macchiato": {
+        "ing1": [2, "Espresso"],
+        "ing2": [0.5, "Foamed Milk"],
+        "ing3": ["--", "----------"],
+        "img": "macchiato.png"
+    },
+    "Mocha": {
+        "ing1": [2, "Espresso"],
+        "ing2": [2, "Chocolate"],
+        "ing3": [1, "Steamed Milk"],
+        "img": "mocha.png"
+    },
+    "Flat White": {
+        "ing1": [2, "Espresso"],
+        "ing2": [4, "Steamed Milk"],
+        "ing3": ["--", "----------"],
+        "img": "flat-white.png"
+    }
+};
+
+let button1 = document.getElementById("1");
+let button2 = document.getElementById("2");
+let button3 = document.getElementById("3");
+
+let meas1 = document.getElementById("meas1");
+let meas2 = document.getElementById("meas2");
+let meas3 = document.getElementById("meas3");
+
+let ing1 = document.getElementById("ing1");
+let ing2 = document.getElementById("ing2");
+let ing3 = document.getElementById("ing3");
+
+let dropdown = document.getElementById("coffee-dropdown");
+let caffiene = document.getElementById("caffiene");
+let scaleimage = document.getElementById("servings-image");
+
+function scale1() {
+    button1.style.backgroundColor = "#B0D1FF";
+    button2.style.backgroundColor = "#FFFFFA";
+    button3.style.backgroundColor = "#FFFFFA";
+
+    meas1.innerHTML = ratios[dropdown.value].ing1[0] + " oz";
+    meas2.innerHTML = ratios[dropdown.value].ing2[0] + " oz";
+    meas3.innerHTML = ratios[dropdown.value].ing3[0] + " oz";
+
+    ing1.innerHTML = ratios[dropdown.value].ing1[1];
+    ing2.innerHTML = ratios[dropdown.value].ing2[1];
+    ing3.innerHTML = ratios[dropdown.value].ing3[1];
+
+    caffiene.innerHTML = "Caffiene: " + ratios[dropdown.value].ing1[0]*64 + " mg";
+}
+
+function scale2() {
+    button2.style.backgroundColor = "#B0D1FF";
+    button1.style.backgroundColor = "#FFFFFA";
+    button3.style.backgroundColor = "#FFFFFA";
+
+    meas1.innerHTML = ratios[dropdown.value].ing1[0]*2 + " oz";
+    meas2.innerHTML = ratios[dropdown.value].ing2[0]*2 + " oz";
+
+    ing1.innerHTML = ratios[dropdown.value].ing1[1];
+    ing2.innerHTML = ratios[dropdown.value].ing2[1];
+
+    if (ratios[dropdown.value].ing3[0] != "--") {
+        meas3.innerHTML = ratios[dropdown.value].ing3[0]*2 + " oz";
+        ing3.innerHTML = ratios[dropdown.value].ing3[1];
+    }
+
+    caffiene.innerHTML = "Caffiene: " + ratios[dropdown.value].ing1[0]*2*64 + " mg";
+}
+
+function scale3() {
+    button3.style.backgroundColor = "#B0D1FF";
+    button1.style.backgroundColor = "#FFFFFA";
+    button2.style.backgroundColor = "#FFFFFA";
+
+    meas1.innerHTML = ratios[dropdown.value].ing1[0]*3 + " oz";
+    meas2.innerHTML = ratios[dropdown.value].ing2[0]*3 + " oz";
+
+    ing1.innerHTML = ratios[dropdown.value].ing1[1];
+    ing2.innerHTML = ratios[dropdown.value].ing2[1];
+
+    if (ratios[dropdown.value].ing3[0] != "--") {
+        meas3.innerHTML = ratios[dropdown.value].ing3[0]*3 + " oz";
+        ing3.innerHTML = ratios[dropdown.value].ing3[1];
+    }
+
+    caffiene.innerHTML = "Caffiene: " + ratios[dropdown.value].ing1[0]*3*64 + " mg";
+}
+
+function scale() {
+    scale1();
+
+    scaleimage.src = "images/" + ratios[dropdown.value].img;
 }
