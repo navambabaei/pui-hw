@@ -35,13 +35,14 @@ section {
     margin-bottom: 60px;
 }
 
-#logo-title {
+/* #logo-title {
     display: flex;
     flex-direction: row;
-}
+} */
 
 #logo-img {
-    max-height: 120px;
+    height: 160px;
+    margin-left: 30px;
 }
 
 a {
