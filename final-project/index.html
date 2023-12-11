@@ -3,28 +3,36 @@
 
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script defer src="app.js"></script>
     <title>Nava's Java</title>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+
+    <!--JS Functionality-->
+    <script defer src="app.js"></script>
+
+    <!--Google Fonts - Inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <!--Animations Library - source: animate.style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!--Google API for Steam Animation-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   
   <body>
 
     <header>
 
+        <!--Logo Top Left-->
         <a href="index.html" id="logo">
             <img src="images/logo.svg" id="logo-img" alt="Java mug with Nava's latte art">
-            <!-- <div id="logo-title">
-                <img src="images/logo.sng" id="logo-img" alt="White mug pouring coffee to the left">
-                <h1>Nava's Java</h1>
-            </div> -->
         </a>
 
+        <!--Nav Menu - Jumps to sections-->
         <nav>
             <a href="#coffee-section">
                 Coffee
@@ -38,8 +46,14 @@
     
     <main> 
 
+        <!--First Section - Intro to Nava's Java-->
         <section id="intro-section">
+
+            <!--Animated aura, flashes in and out-->
+            <!--Animations Library - source: animate.style-->
             <img src="images/ellipse.jpg" class="animate__animated animate__flash animate__slower animate__infinite" id="ellipse-img" alt="Blue oval with blurred edges, under a random assortment of small yellow stars"/>
+            
+            <!--Blurb about Nava's Java & purpose-->
             <div id="intro-section-text">
                 <h2>Coffee menus shouldn't feel like a wine list.</h2>
                 <ul>
@@ -48,11 +62,14 @@
                     <li>Learn how it's made 💡</li>
                 </ul>
             </div>
+
         </section>
 
+        <!--Second Section - Coffee Cards-->
         <section id="coffee-section">
             <h1>Coffee ☕️</h1>
 
+            <!--Div storing all of the coffee cards - image and title-->
             <div id="coffee-cards">
                 <div class="card" onclick="openModal('espresso')">
                     <img src="images/espresso.png" class="card-img" alt="Cartoon cup with a shot of espresso"/>
@@ -94,10 +111,14 @@
                     <p class="card-title">Black Coffee</p>
                 </div>
 
+                <!--Modal that appears onclick of one of the coffee cards-->
+                <!--Learned how to use modals from W3Schools - source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal-->
                 <div id="modal-background">
 
+                    <!--Animations Library - source: animate.style-->
                     <div id="modal" class="animate__animated animate__slideInLeft">
 
+                        <!--Close button to make modal disappear-->
                         <img src="images/x.svg" id="close" alt="X: Close modal"/>
 
                         <div id="modal-contents">
@@ -120,6 +141,7 @@
 
         </section>
 
+        <!--Third Section - Serving Scaler-->
         <section id="ratio-section">
             <h1>Serving Scaler ⚖️</h1>
 
@@ -143,8 +165,6 @@
                                 <option>Flat White</option>
                             </select>
 
-                            <!-- <button id="make">Make</button> -->
-
                         </div>
                 
                     </div>
@@ -152,6 +172,7 @@
                     <div id="results">
                     
                         <div id="cup">
+                            <!--Steam animation source: https://codepen.io/vcmg/pen/LVRBdP-->
                             <div class="steam" id="steam-one"></div>
                             <div class="steam" id="steam-two"></div>
                             <div class="steam" id="steam-three"></div>
@@ -166,8 +187,8 @@
                                 <button class="servings" id="2" onclick="scale2()">2x</button>
                                 <button class="servings" id="3" onclick="scale3()">3x</button>
                             </div>
-
-                            <div id="recipe" class="animate__animated animate__fadeIn">
+                            
+                            <div id="recipe">
                                 <div class="recipe-line">
                                     <span class="measurement" id="meas1">-- oz</span>
                                     <p class="ingredient" id="ing1">----------</p>
@@ -193,6 +214,7 @@
                 </div>
 
             </div>
+
         </section>
 
     </main>

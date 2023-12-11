@@ -1,3 +1,4 @@
+// Dictionary containing elements for the modal pop ups
 const drinks = {
     "espresso": {
         "name": "Espresso",
@@ -67,6 +68,7 @@ const drinks = {
 
 let modal = document.getElementById("modal-background");
 
+// Opening modal on click of card, calling populate function before displaying modal
 function openModal(title) {
     populateModal(title);
     modal.style.display = "block";
@@ -74,22 +76,19 @@ function openModal(title) {
 
 let closebutton = document.getElementById("close");
 
+// Closing modal on click of X icon
 closebutton.onclick = function() {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
+// Retrieving DOM elements to populate modal on click 
 let image = document.getElementById("modal-img");
 let coffee = document.getElementById("coffee-type");
 let description = document.getElementById("coffee-description");
 let pairing = document.getElementById("enjoyed-with");
 let fact = document.getElementById("fun-fact");
 
+// Dynamically populating modal based on card click
 function populateModal(title) {
     image.src = "images/" + drinks[title].image;
     coffee.innerHTML = drinks[title].name;
@@ -98,7 +97,7 @@ function populateModal(title) {
     fact.innerHTML = "🤓: " + drinks[title].fact;
 }
 
-
+// Dictionary containing measurements of all drinks
 const ratios = {
     "Cappuccino": {
         "ing1": [2, "Espresso"],
@@ -138,22 +137,27 @@ const ratios = {
     }
 };
 
+// Accessing serving buttons
 let button1 = document.getElementById("1");
 let button2 = document.getElementById("2");
 let button3 = document.getElementById("3");
 
+// Accessing measurement elements
 let meas1 = document.getElementById("meas1");
 let meas2 = document.getElementById("meas2");
 let meas3 = document.getElementById("meas3");
 
+// Accessing ingredient elements
 let ing1 = document.getElementById("ing1");
 let ing2 = document.getElementById("ing2");
 let ing3 = document.getElementById("ing3");
 
+// Accessing Serving Scaler elements
 let dropdown = document.getElementById("coffee-dropdown");
 let caffiene = document.getElementById("caffiene");
 let scaleimage = document.getElementById("servings-image");
 
+// Scaling servings on button 1 click
 function scale1() {
     button1.style.backgroundColor = "#B0D1FF";
     button2.style.backgroundColor = "#FFFFFA";
@@ -170,6 +174,7 @@ function scale1() {
     caffiene.innerHTML = "Caffiene: " + ratios[dropdown.value].ing1[0]*64 + " mg 😛";
 }
 
+// Scaling servings on button 2 click
 function scale2() {
     button2.style.backgroundColor = "#B0D1FF";
     button1.style.backgroundColor = "#FFFFFA";
@@ -189,6 +194,7 @@ function scale2() {
     caffiene.innerHTML = "Caffiene: " + ratios[dropdown.value].ing1[0]*2*64 + " mg 😝";
 }
 
+// Scaling servings on button 3 click
 function scale3() {
     button3.style.backgroundColor = "#B0D1FF";
     button1.style.backgroundColor = "#FFFFFA";
@@ -208,6 +214,7 @@ function scale3() {
     caffiene.innerHTML = "Caffiene: " + ratios[dropdown.value].ing1[0]*3*64 + " mg 🤪";
 }
 
+// Automatically displaying serving measurements for 1 serving upon dropdown selection
 function scale() {
     scale1();
 
